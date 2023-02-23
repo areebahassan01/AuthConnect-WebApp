@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script>
+		function increaseFontSize() {
+			var element = document.getElementById("content");
+			var fontSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
+			var currentSize = parseFloat(fontSize);
+			element.style.fontSize = (currentSize + 1) + 'px';
+		}
+
+		function decreaseFontSize() {
+			var element = document.getElementById("content");
+			var fontSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
+			var currentSize = parseFloat(fontSize);
+			element.style.fontSize = (currentSize - 1) + 'px';
+		}
+        function changeBackgroundColor() {
+			var color = document.getElementById("colorInput").value;
+			document.body.style.backgroundColor = color;
+		}
+	</script>
+	<style>
+		 .main_div {
+
+
+
+position: relative;
+height: 100vh
+
+
+}
+
+.sub_div {
+
+position: absolute;
+
+bottom: 0px;
+
+}
+
+	</style>
+       
+    </head>
+
+<body>
+	<div class = "main_div">
+		
+    <a href="https://www.amazon.com/"> Amazon </a> <br>
+    <a href="https://www.youtube.com/">Youtube </a> <br>
+    <a href="https://www.unt.edu/">Univeristy of North Texas </a> <br>
+    <a href='/download'>Download</a> <br>
+
+    <button onclick="increaseFontSize()"> + font size</button> 
+	<button onclick="decreaseFontSize()"> - font size</button>
+     <div id="content"> 
+		<p>Hello World! How are you? </p>
+		<div class="sub_div">
+        <label for="colorInput">Choose a background color:</label>
+	<input type="color" id="colorInput" onchange="changeBackgroundColor()"> </div>
+    <a href='/logout'><button>Logout</button>
+    </a>
+	</div>
+	</div>
+</body>
+</html>
